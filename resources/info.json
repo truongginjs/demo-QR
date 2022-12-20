@@ -1,0 +1,24 @@
+[
+    {
+        "no": 1,
+        "name": "Mr. Tui",
+        "phone": "0900900900",
+        "gender": "male",
+        "image": "resources/avt_1.png"
+    },
+    {
+        "no": 2,
+        "name": "Mrs. Her",
+        "phone": "0900900901",
+        "gender": "female",
+        "image": "resources/avt_2.png"
+    },
+    {
+        "no": 3,
+        "name": "Dr. BS",
+        "phone": "0900900903",
+        "gender": "male",
+        "image": "resources/avt_3.png"
+    }
+
+]
