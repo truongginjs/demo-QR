@@ -1,8 +1,3 @@
-var info = [];
-var img = `resources/avt_1.jpg`
-$('.card-img-top').attr('src', img);
-let questionIndexs = []
-
 const dirFile = 'resources/info.json';
 
 const params = new Proxy(new URLSearchParams(window.location.search), {
@@ -31,15 +26,21 @@ const click = async (e) => {
 
     let text = `
     <div class="card">
-    <h4 class="card-title">${info.name}</h4>
-    <img class="card-img-top img-fluid" src="${info.image}" alt="Card image" style="max-height:35vh;">
+    <h4 class="card-title">Name: ${info.name}</h4>
+    <img class="card-img-top img-fluid" src="${info.image}" alt="${info.name}" style="max-height:35vh;">
     <ul class="list-group list-group-flush content-data">
-        <li class="list-group-item">${info.no}</li>
-        <li class="list-group-item">${info.gender}</li>
-        <li class="list-group-item">${info.phone}</li>
+        <li class="list-group-item">No: ${info.no}</li>
+        <li class="list-group-item">Gender: ${info.gender}</li>
+        <li class="list-group-item">Phone: ${info.phone}</li>
         
     </ul>
-    <h6 class="card-subtitle" style="margin-top: 10px; margin-bottom: 10px;" id='indexs'>😂❤️👌💕</h6>
+    <h6 class="card-subtitle" style="margin-top: 10px; margin-bottom: 10px;">${info.youtube ?
+        `<iframe width="100%" height="315" src="${info.youtube}" title="${info.name}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>` 
+        : 
+        info.name
+    
+    }
+    </h6>
   </div>`
 
     $('.content-data').html(text)
