@@ -18,11 +18,9 @@ function makeCode(query) {
   var elText = $(query)
 
   if (!elText.val()) {
-    alert("Input a text");
-    elText.focus();
     return;
   }
-  
+
   $('#link-card').attr("href", elText.val())
 
   qrcode.makeCode(elText.val());
