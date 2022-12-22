@@ -43,6 +43,15 @@
         "gender": "PM",
         "image": "https://akm-img-a-in.tosshub.com/businesstoday/images/story/202206/modi_4-sixteen_nine.jpg?size=948:533",
         "youtube": "https://www.youtube.com/embed/UQPC-r8o6pc?autoplay=1&mute=0"
+    },
+    {
+        "no": "vntan",
+        "name": "Võ Ngọc Tân",
+        "phone": "000000001",
+        "gender": "Leader",
+        "image": "resources/vntan.jpg",
+        "youtube": "https://www.youtube.com/embed/UQPC-r8o6pc?autoplay=1&mute=0"
     }
+    
 
 ]
