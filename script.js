@@ -28,7 +28,7 @@ function makeCode(query) {
 
 const demo = async () => {
   let container = $('#example')
-  const url = "https://truongginjs.github.io/demo-QR/card.html?no="
+  const url = "https://truongginjs.github.io/demo-QR/namecard.html?no="
   var infos = await GetInfos()
   const text =  infos.map(x=>`<>`).join('')
   container.html()
