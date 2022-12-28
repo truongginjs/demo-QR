@@ -11,7 +11,7 @@ const GetInfo = async () => {
     try {
         const response = await fetch(dirFile)
         const infos = await response.json()
-        rs = infos.find(x=>x.no==no)
+        rs = infos.find(x=>x.no==index)
 
     } catch (e) {
         console.log(e)

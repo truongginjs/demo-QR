@@ -1,0 +1,17 @@
+[
+    {
+        "index": "dvhung",
+        "fullname": "Đăng Vũ Hùng",
+        "description": "Chủ tịch HDQT - Tổng giám đốc",
+        "image": "./resources/dvhung.png",
+        "contact": {
+            "zalo": "zalo",
+            "fb": "fb.com",
+            "instagram": "ins.com",
+            "mail": "mail@ppj.com",
+            "phone": "0000000",
+            "website": "https://ppj-group.com.vn"
+        }
+    }
+
+]
