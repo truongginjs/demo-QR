@@ -1,0 +1,49 @@
+.cardbody{
+    height: 80vh;
+    top: 20vh;
+    background-color: white;
+    position: absolute;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+}
+.cardbody .divhinh{
+    margin-top: -100px;
+}
+.cardbody .divhinh img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: 100% 0;
+    border-radius: 50%;
+    border: 5px solid lightgray;
+}
+.cardbody .nametitle{
+    font-size: 40px;
+    font-weight: 500;
+}
+.cardbody .vitri{
+    font-size: 20px;
+}
+.cardbody .cum3button{
+    width: 80vw;
+}
+.cardbody .cum3button .save{
+    border: 2px solid #244684;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.cardbody .cum3button .scan{
+    border: 2px solid #244684;
+    border-left: none;
+    border-right: none;
+}
+.cardbody .cum3button .share{
+    border: 2px solid #244684;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: #244684;
+    color: white;
+}
+.cum3button i{
+    font-size: 40px;
+}
