@@ -1,9 +1,36 @@
+var qrcode = new QRCode("qrcode", {
+    text: "http://jindo.dev.naver.com/collie",
+    width: 256,
+    height: 256,
+    colorDark : "#007bff",
+    colorLight : "#ffffff",
+    correctLevel : QRCode.CorrectLevel.H
+});
 const dirFile = './resources/data.json';
+
+const url = window.location.href
 
 const params = new Proxy(new URLSearchParams(window.location.search), {
     get: (searchParams, prop) => searchParams.get(prop),
 });
 
+// const makeQR = (url) => {
+//     var qrcode = new QRCode("qrcode", {
+//       text: url,
+//       width: 128,
+//       height: 128,
+//       colorDark: "#000000",
+//       colorLight: "#ffffff",
+//       correctLevel: QRCode.CorrectLevel.H
+//     });
+// }
+
+
+function makeCode(query) {
+    const path = params.url ?? "superidol.hehe"
+  
+    qrcode.makeCode(path);
+  }
 
 
 const GetInfo = async () => {
@@ -30,14 +57,10 @@ const Do = async () => {
         contact
 
     } = data
-
-    const styleCard = `background: -webkit-linear-gradient(rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 40%, rgba(35, 69, 130, 1) 50%, rgba(35, 69, 130, 1) 100%), url("${image}") round no-repeat, #bababa;
-    background: linear-gradient(rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 40%, rgba(35, 69, 130, 1) 50%, rgba(35, 69, 130, 1) 100%), 
-        url("${image}") round no-repeat, #bababa;`;
-
-    $('.container#card').attr('style', styleCard)
-    $('#info h1').html(fullname)
-    $('#info h2').html(description)
+    makeCode();
+    $('.cardbody>img').attr('src', image)
+    $('.cardbody .nametitle').html(fullname)
+    $('.cardbody .vitri').html(description)
 
     $('.icon-container #phone').click(function (e) { 
         e.preventDefault();
@@ -53,6 +76,17 @@ const Do = async () => {
         e.preventDefault();
         window.open(`whatsapp:${contact.whatsapp}`)
     });
+
+    $('.cum3button .save').click(function(e){
+
+    })
+
+    $('.cum3button .share').click(function (e) { 
+        e.preventDefault();
+        navigator.share(url)
+    });
+
+
 }
 
 Do()
