@@ -1,18 +1,20 @@
-var qrcode = new QRCode("qrcode", {
-    text: "http://jindo.dev.naver.com/collie",
-    width: 256,
-    height: 256,
-    colorDark : "#007bff",
-    colorLight : "#ffffff",
-    correctLevel : QRCode.CorrectLevel.H
-});
-const dirFile = './resources/data.json';
-
 const url = window.location.href
 
 const params = new Proxy(new URLSearchParams(window.location.search), {
     get: (searchParams, prop) => searchParams.get(prop),
 });
+
+const dirFile = params.lang == 'en' ? './resources/dataEn.json' : './resources/data.json';
+
+var qrcode = new QRCode("qrcode", {
+    text: "Hello",
+    width: 256,
+    height: 256,
+    colorDark: "#007bff",
+    colorLight: "#ffffff",
+    correctLevel: QRCode.CorrectLevel.H
+});
+
 
 // const makeQR = (url) => {
 //     var qrcode = new QRCode("qrcode", {
@@ -28,9 +30,9 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
 
 function makeCode(query) {
     const path = params.url ?? "superidol.hehe"
-  
+
     qrcode.makeCode(path);
-  }
+}
 
 
 const GetInfo = async () => {
@@ -50,6 +52,7 @@ const GetInfo = async () => {
 const Do = async () => {
     const data = await GetInfo();
     const {
+        gender,
         index,
         fullname,
         description,
@@ -59,29 +62,29 @@ const Do = async () => {
     } = data
     makeCode();
     $('.cardbody>img').attr('src', image)
-    $('.cardbody .nametitle').html(fullname)
+    $('.cardbody .nametitle').html(gender + ' ' + fullname)
     $('.cardbody .vitri').html(description)
 
-    $('.icon-container #phone').click(function (e) { 
+    $('.icon-container #phone').click(function (e) {
         e.preventDefault();
         window.open(`tel:${contact.phone}`)
-        
+
     });
-    $('.icon-container #mail').click(function (e) { 
+    $('.icon-container #mail').click(function (e) {
         e.preventDefault();
         window.open(`mailto:${contact.mail}`)
-        
+
     });
-    $('.icon-container #whatsapp').click(function (e) { 
+    $('.icon-container #whatsapp').click(function (e) {
         e.preventDefault();
         window.open(`whatsapp:${contact.whatsapp}`)
     });
 
-    $('.cum3button .save').click(function(e){
+    $('.cum3button .save').click(function (e) {
 
     })
 
-    $('.cum3button .share').click(function (e) { 
+    $('.cum3button .share').click(function (e) {
         e.preventDefault();
         navigator.share(url)
     });
